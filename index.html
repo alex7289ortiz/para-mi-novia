@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>100 razones por las que amo a Reina</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <div class="ambient-gradient" aria-hidden="true"></div>
+    <div class="heart-field" id="heartField" aria-hidden="true"></div>
+
+    <div class="music-player" aria-label="Reproductor de música">
+      <button class="music-button" id="musicButton" type="button" aria-pressed="false">
+        <span class="music-icon" id="musicIcon">♪</span>
+        <span id="musicLabel">Reproducir música</span>
+      </button>
+      <label class="volume-control" for="volumeControl">
+        <span>🔊</span>
+        <input id="volumeControl" type="range" min="0" max="1" step="0.05" value="0.75">
+      </label>
+    </div>
+
+    <audio id="loveMusic" loop preload="none">
+      <source src="assets/audio/musica-romantica.mp3" type="audio/mpeg">
+    </audio>
+
+    <section class="screen intro-screen is-visible" id="introScreen">
+      <div class="intro-content glow-panel">
+        <p class="dedication">Para Reina ❤️</p>
+        <h1>100 razones por las que te amo</h1>
+        <p class="intro-subtitle">Un pequeño recuerdo de todo lo que significas para mí.</p>
+        <button class="primary-button shimmer-button" id="startButton" type="button">
+          Comenzar nuestra historia
+        </button>
+      </div>
+    </section>
+
+    <section class="screen reason-screen" id="reasonScreen" aria-live="polite">
+      <div class="progress-wrap">
+        <p class="progress-text" id="progressText">Razón 1 de 100</p>
+        <div class="progress-bar" aria-hidden="true">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+      </div>
+
+      <article class="love-card premium-card" id="loveCard">
+        <div class="card-ornament" aria-hidden="true"></div>
+        <p class="reason-number" id="reasonNumber">Razón 1</p>
+        <p class="reason-text" id="reasonText"></p>
+
+        <div class="photo-frame" id="photoFrame" aria-live="polite">
+          <img id="reasonPhoto" alt="Foto especial de Reina">
+          <p id="photoFallback">Foto especial pendiente ❤️</p>
+        </div>
+      </article>
+
+      <button class="secondary-button" id="nextButton" type="button">Mostrar otra razón</button>
+    </section>
+
+    <section class="screen final-screen" id="finalScreen">
+      <div class="final-card glow-panel">
+        <p class="final-title">Mi amor por ti</p>
+        <p class="final-message">
+          Y aunque escribí 100 razones,<br>
+          todavía me faltan infinitas formas<br>
+          de decirte cuánto te amo.
+        </p>
+        <button class="primary-button shimmer-button" id="storyButton" type="button">
+          Ver nuestro viaje
+        </button>
+      </div>
+    </section>
+
+    <section class="screen story-screen" id="storyScreen">
+      <div class="story-scroll" id="storyScroll">
+        <header class="story-header">
+          <p class="dedication">NUESTRO VIAJE ❤️</p>
+          <h2>Los recuerdos que quiero guardar contigo</h2>
+        </header>
+
+        <div class="timeline" id="timeline"></div>
+
+        <article class="letter-card final-love-letter glow-panel">
+          <p class="letter-kicker">Carta final</p>
+          <h2 id="finalLetterTitle">❤️ Para mi Reina, mi amor eterno, mi pingüina ❤️</h2>
+          <p id="finalLetter"></p>
+          <button class="primary-button shimmer-button restart-button" id="restartButton" type="button">
+            ❤️ Volver a recorrer nuestra historia ❤️
+          </button>
+        </article>
+      </div>
+    </section>
+
+    <div class="image-modal" id="imageModal" aria-hidden="true" role="dialog" aria-label="Foto ampliada">
+      <button class="modal-close" id="modalClose" type="button" aria-label="Cerrar foto">×</button>
+      <img id="modalImage" alt="Foto ampliada">
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
